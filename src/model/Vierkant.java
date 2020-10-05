@@ -20,7 +20,10 @@ public class Vierkant {
         return this.getZijde() * this.getZijde();
     }
 
-    public static double berekenZijde(double oppervlakte) {
+    public static double berekenZijde(double oppervlakte) throws IllegalArgumentException {
+        if (oppervlakte < 0) {
+            throw new IllegalArgumentException("Oppervlakte mag niet negatief zijn.");
+        }
         return Math.sqrt(oppervlakte);
     }
 
@@ -28,7 +31,10 @@ public class Vierkant {
         return zijde;
     }
 
-    public void setZijde(double zijde) {
+    public void setZijde(double zijde) throws IllegalArgumentException {
+        if (zijde < 0) {
+            throw new IllegalArgumentException("Zijde mag niet negatief zijn.");
+        }
         this.zijde = zijde;
     }
 
